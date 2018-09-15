@@ -1,0 +1,31 @@
+import React from 'react'
+import {IoLogoHtml5, IoLogoNodejs, IoLogoCss3, IoLogoWordpress} from 'react-icons/io'
+import {FaReact, FaLinux} from 'react-icons/fa'
+import {Section, Article, Figure, Image, Main, Title, Content, Footer, Summary, Skills} from './StyledAbout'
+
+const About = () =>
+  <Section>
+    <Article>
+      <Figure>
+        <Image
+          src="https://res.cloudinary.com/spottermart/image/upload/c_scale,w_250/v1536690594/romanBrito/ProfilePic.jpg"
+          alt="Roman Brito"/>
+      </Figure>
+      <Main>
+        <Title>Roman Brito | Full Stack Developer</Title>
+        <Content><p>My interest in computers began at at age 8 when I got my first PC and continued in High School when
+          I won a couple of coding competitions. I have a BA in Economics and a Masters in Finance from ITESM/EGADE I
+          see potential in developing applications for a wide range of areas, from advertising and loyalty programs to
+          big data analysis and logistics.</p>
+          <Skills><IoLogoHtml5/> <FaReact/> <IoLogoNodejs/> <FaLinux/> <IoLogoCss3/> <IoLogoWordpress/></Skills>
+        </Content>
+      </Main>
+      <Footer>
+        <Summary>Skills</Summary>
+        <p>Javascript • NodeJS • ReactJS • Relay • GraphQL • MongoDB • MySQL • Linux • CSS • Sass • Github •
+          Wordpress</p>
+      </Footer>
+    </Article>
+  </Section>
+
+export default About

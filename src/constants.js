@@ -1,0 +1,1 @@
+export const SIMPLE_API = 'https://api.graph.cool/simple/v1/cjm2n8qnh7ili0183nobpe0vr'
