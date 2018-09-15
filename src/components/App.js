@@ -5,13 +5,17 @@ import Contact from './Contact'
 import About from './About'
 import Projects from './Projects'
 import {Main, CloseButton} from './StyledApp'
+import {fetchQuery} from "../Environment";
 
 
 class App extends Component {
 
   state = {
     showArticle: false,
-    component: ''
+    component: '',
+    sender:'',
+    from: '',
+    text: ''
   }
 
   render() {
@@ -25,7 +29,7 @@ class App extends Component {
             >
               CLOSE
             </CloseButton>
-            <ComponentSelector component={this.state.component}/>
+            <ComponentSelector component={this.state.component} onChangeInput={this.onChangeInput} sendMail={this.sendMail}/>
           </div>
           : null}
         <Navigation showArticle={this.showArticle}/>
@@ -52,6 +56,50 @@ class App extends Component {
       MAIN.setAttribute("style", "grid-template-rows: 3fr 2fr")
     }
   }
+
+  // Controlled component functions: onChangeInput and newState
+  onChangeInput = e => {
+    const {name, value} = e.target
+    this.newState(name, value)
+  }
+
+  // Generate new state after input has changed
+  newState = (element, newElement) => {
+    const newState = Object.keys(this.state).reduce((prev, curr) => {
+      curr === element ? prev[curr] = newElement : prev[curr] = this.state[curr]
+      return prev
+    }, {})
+    this.setState(newState)
+  }
+  //
+
+  sendMail = async () => {
+
+    const {from, text, sender} = this.state
+
+    const mutationText = `
+   mutation SendMessageMutation($from: String!, $text: String!) {
+        sendMailgunEmail(
+            tag: "romanbritopro-contact",
+            from: $from,
+            subject: "romanbritopro contact",
+            text: $text,
+        ) {
+            success
+        }
+    }
+  `
+    const sendMailMutation = {text: mutationText}
+
+    if (from && text && sender) {
+      const result = await fetchQuery(sendMailMutation, {from, text})
+      console.log(result)
+    } else {
+      console.log('all fields are necessary')
+    }
+
+
+  }
 }
 
 export default App
@@ -67,7 +115,7 @@ const ComponentSelector = (props) => {
       return <Projects/>
 
     case 'Contact':
-      return <Contact/>
+      return <Contact onChangeInput={props.onChangeInput} sendMail={props.sendMail}/>
 
     default:
       return null
