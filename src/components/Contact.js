@@ -1,5 +1,5 @@
 import React from 'react'
-import {Aside, InputName, InputEmail, Message, Label, MessageLabel, SendButton} from './StyledContact'
+import {Aside, InputName, InputEmail, Message, Label, MessageLabel, SendButton, Error} from './StyledContact'
 
 const Contact = (props) =>
   <Aside>
@@ -31,6 +31,9 @@ const Contact = (props) =>
     >
       Send
     </SendButton>
+    {props.error &&
+      <Error>{props.error}</Error>
+    }
   </Aside>
 
 export default Contact

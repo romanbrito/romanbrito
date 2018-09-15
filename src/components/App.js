@@ -15,7 +15,8 @@ class App extends Component {
     component: '',
     sender:'',
     from: '',
-    text: ''
+    text: '',
+    error: null
   }
 
   render() {
@@ -29,7 +30,7 @@ class App extends Component {
             >
               CLOSE
             </CloseButton>
-            <ComponentSelector component={this.state.component} onChangeInput={this.onChangeInput} sendMail={this.sendMail}/>
+            <ComponentSelector component={this.state.component} onChangeInput={this.onChangeInput} sendMail={this.sendMail} error={this.state.error}/>
           </div>
           : null}
         <Navigation showArticle={this.showArticle}/>
@@ -75,7 +76,13 @@ class App extends Component {
 
   sendMail = async () => {
 
-    const {from, text, sender} = this.state
+    const {from, sender} = this.state
+
+    const text = `${sender} wrote this:
+    
+    ${this.state.text}
+    
+    `
 
     const mutationText = `
    mutation SendMessageMutation($from: String!, $text: String!) {
@@ -93,9 +100,22 @@ class App extends Component {
 
     if (from && text && sender) {
       const result = await fetchQuery(sendMailMutation, {from, text})
-      console.log(result)
+      if (result.data.sendMailgunEmail.success) {
+        this.setState({
+          from:'',
+          text:'',
+          sender: '',
+          error: null
+        })
+
+        this.closeArticle()
+      } else {
+        this.setState({error: 'Message failed'})
+      }
     } else {
-      console.log('all fields are necessary')
+      this.setState({
+        error: 'Please fill all fields'
+      })
     }
 
 
@@ -115,7 +135,7 @@ const ComponentSelector = (props) => {
       return <Projects/>
 
     case 'Contact':
-      return <Contact onChangeInput={props.onChangeInput} sendMail={props.sendMail}/>
+      return <Contact onChangeInput={props.onChangeInput} sendMail={props.sendMail} error={props.error}/>
 
     default:
       return null

@@ -29,3 +29,7 @@ export const MessageLabel = styled.label.attrs({
 export const SendButton = styled.button.attrs({
   className: "pa2 pointer"
 })``
+
+export const Error = styled.p.attrs({
+  className: "red"
+})``
