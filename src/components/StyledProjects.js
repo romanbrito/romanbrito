@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
 export const Aside = styled.aside.attrs({
+  className: "pt4 pt0-ns flex flex-column justify-center h-100"
+})``
+
+export const SlideShow = styled.div.attrs({
   className: "black w-100 w-50-ns center"
 })`
   display: grid;
