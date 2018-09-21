@@ -18,15 +18,8 @@ export const Figure = styled.figure.attrs({
 `
 
 export const Image = styled.img.attrs({
-  className: "w-100"
+  className: "w-100 br4"
 })``
-
-export const Counter = styled.p.attrs({
-  className: ""
-})`
-  grid-column: 1;
-  grid-row: 1;  
-`
 
 export const ArrowContainer = styled.div.attrs({
   className: "flex flex items-center justify-between"

@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
-import MenuBoard from '../images/MoonMenu.jpg'
-import Texadelphia from '../images/newTexadelphia.jpg'
-import TrekMate from '../images/trekmate.jpg'
-import {Aside, SlideShow, Figure, Image, Counter, ArrowContainer, ArrowLeft, ArrowRight} from './StyledProjects'
+import MenuBoard from '../images/Menu.jpg'
+import Texadelphia from '../images/texadelphia.jpg'
+import TrekMate from '../images/trekmateio.jpg'
+import {Aside, SlideShow, Figure, Image, ArrowContainer, ArrowLeft, ArrowRight} from './StyledProjects'
 
 // image array for slide show
 const imageArray = [Texadelphia, MenuBoard, TrekMate]
@@ -24,7 +24,6 @@ class Projects extends Component {
               alt="project"
             />
           </Figure>
-          <Counter>{`${this.state.n + 1}/${imageArray.length} `}</Counter>
           <ArrowContainer>
             <ArrowLeft
               onClick={() => this._slideControl(-1)}
