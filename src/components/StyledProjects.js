@@ -5,9 +5,12 @@ export const Aside = styled.aside.attrs({
 })``
 
 export const SlideShow = styled.div.attrs({
-  className: "black w-100 w-50-ns center"
+  className: "black w-100 center"
 })`
   display: grid;
+  @media screen and (min-width: 1025px) {
+    width: 50%;
+  }
 `
 
 export const Figure = styled.figure.attrs({
@@ -18,7 +21,11 @@ export const Figure = styled.figure.attrs({
 `
 
 export const Image = styled.img.attrs({
-  className: "w-100 br4"
+  className: "w-100 br4 dn db-ns"
+})``
+
+export const ImageSmall = styled.img.attrs({
+  className: "w-100 br4 dn-ns"
 })``
 
 export const ArrowContainer = styled.div.attrs({

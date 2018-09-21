@@ -1,5 +1,5 @@
 import React from 'react'
-import {IoLogoLinkedin, IoLogoGithub, IoIosDocument, IoMdDocument} from 'react-icons/io'
+import {IoLogoLinkedin, IoLogoGithub, IoIosDocument} from 'react-icons/io'
 import {Header, MainTitle, SubTitle, Social, Link} from './StyledHeading'
 
 const Heading = () =>

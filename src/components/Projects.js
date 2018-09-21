@@ -1,12 +1,15 @@
 import React, {Component} from 'react'
-import MenuBoard from '../images/Menu.jpg'
-import Texadelphia from '../images/texadelphia.jpg'
-import TrekMate from '../images/trekmateio.jpg'
-import {Aside, SlideShow, Figure, Image, ArrowContainer, ArrowLeft, ArrowRight} from './StyledProjects'
+import MenuBoard from '../images/MenuPortrait.jpg'
+import Texadelphia from '../images/texadelphiaPortrait.jpg'
+import TrekMate from '../images/trekmateioPortrait.jpg'
+import MenuBoardWide from '../images/Menu.jpg'
+import TexadelphiaWide from '../images/texadelphia.jpg'
+import TrekMateWide from '../images/trekmateio.jpg'
+import {Aside, SlideShow, Figure, Image, ImageSmall, ArrowContainer, ArrowLeft, ArrowRight} from './StyledProjects'
 
 // image array for slide show
-const imageArray = [Texadelphia, MenuBoard, TrekMate]
-
+const imageArraySmall = [Texadelphia, MenuBoard, TrekMate]
+const imageArray = [TexadelphiaWide, MenuBoardWide, TrekMateWide]
 // slide show
 class Projects extends Component {
   state = {
@@ -19,6 +22,10 @@ class Projects extends Component {
       <Aside>
         <SlideShow>
           <Figure>
+            <ImageSmall
+              src={imageArraySmall[this.state.n]}
+              alt="project"
+            />
             <Image
               src={imageArray[this.state.n]}
               alt="project"
