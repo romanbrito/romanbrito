@@ -1,5 +1,5 @@
 import React from 'react'
-import {IoLogoLinkedin, IoLogoGithub} from 'react-icons/io'
+import {IoLogoLinkedin, IoLogoGithub, IoIosDocument, IoMdDocument} from 'react-icons/io'
 import {Header, MainTitle, SubTitle, Social, Link} from './StyledHeading'
 
 const Heading = () =>
@@ -11,6 +11,7 @@ const Heading = () =>
     <Social>
       <Link href="https://www.linkedin.com/in/roman-brito-chabrand/" target="_blank"><IoLogoLinkedin/></Link>
       <Link href="https://github.com/romanbrito/" target="_blank"><IoLogoGithub/></Link>
+      <Link href="https://github.com/romanbrito/" target="_blank"><IoIosDocument/></Link>
     </Social>
   </Header>
 
