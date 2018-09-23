@@ -29,7 +29,7 @@ export const ImageSmall = styled.img.attrs({
 })``
 
 export const ArrowContainer = styled.div.attrs({
-  className: "flex flex items-center justify-between"
+  className: "flex items-center justify-between"
 })`
   grid-column: 1;
   grid-row: 1;
@@ -49,4 +49,11 @@ export const ArrowRight = styled.button.attrs({
   :focus {
      outline: none;
   }
+`
+
+export const TitleContainer = styled.div.attrs({
+  className: "flex items-center justify-center flex-column white"
+})`
+  grid-column: 1;
+  grid-row: 1;
 `

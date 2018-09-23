@@ -1,15 +1,38 @@
 import React, {Component} from 'react'
-import MenuBoard from '../images/MenuPortrait.jpg'
-import Texadelphia from '../images/texadelphiaPortrait.jpg'
-import TrekMate from '../images/trekmateioPortrait.jpg'
+import MenuBoardPort from '../images/MenuPortrait.jpg'
+import TexadelphiaPort from '../images/texadelphiaPortrait.jpg'
+import TrekMatePort from '../images/trekmateioPortrait.jpg'
 import MenuBoardWide from '../images/Menu.jpg'
 import TexadelphiaWide from '../images/texadelphia.jpg'
 import TrekMateWide from '../images/trekmateio.jpg'
-import {Aside, SlideShow, Figure, Image, ImageSmall, ArrowContainer, ArrowLeft, ArrowRight} from './StyledProjects'
+import {
+  Aside,
+  SlideShow,
+  Figure,
+  Image,
+  ImageSmall,
+  ArrowContainer,
+  ArrowLeft,
+  ArrowRight,
+  TitleContainer
+} from './StyledProjects'
+
+class Portfolio {
+  constructor(imagePortrait, imageWide, title, subtitle) {
+    this.imagePortrait = imagePortrait
+    this.imageWide = imageWide
+    this.title = title
+    this.subtitle = subtitle
+  }
+}
+
+const texadelphia = new Portfolio(TexadelphiaPort, TexadelphiaWide, 'Texadelphia', 'Website')
+const menuBoard = new Portfolio(MenuBoardPort, MenuBoardWide, 'Menu', 'Digital Menu')
+const trekmate = new Portfolio(TrekMatePort, TrekMateWide, 'Trekmate.io', 'Travel App')
 
 // image array for slide show
-const imageArraySmall = [Texadelphia, MenuBoard, TrekMate]
-const imageArray = [TexadelphiaWide, MenuBoardWide, TrekMateWide]
+const projectArray = [texadelphia, menuBoard, trekmate]
+
 // slide show
 class Projects extends Component {
   state = {
@@ -23,11 +46,11 @@ class Projects extends Component {
         <SlideShow>
           <Figure>
             <ImageSmall
-              src={imageArraySmall[this.state.n]}
+              src={projectArray[this.state.n].imagePortrait}
               alt="project"
             />
             <Image
-              src={imageArray[this.state.n]}
+              src={projectArray[this.state.n].imageWide}
               alt="project"
             />
           </Figure>
@@ -43,6 +66,11 @@ class Projects extends Component {
               &#10095;
             </ArrowRight>
           </ArrowContainer>
+          <TitleContainer>
+            <h1>{projectArray[this.state.n].title}</h1>
+            <h2>{projectArray[this.state.n].subtitle}</h2>
+          </TitleContainer>
+
         </SlideShow>
       </Aside>
     )
@@ -50,8 +78,8 @@ class Projects extends Component {
 
   _slideControl = i => {
     const n = this.state.n + i
-    if (n > imageArray.length - 1) this.setState({n: 0})
-    else if (n < 0) this.setState({n: imageArray.length - 1})
+    if (n > projectArray.length - 1) this.setState({n: 0})
+    else if (n < 0) this.setState({n: projectArray.length - 1})
     else this.setState({n})
   }
 }
