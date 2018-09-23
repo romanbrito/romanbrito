@@ -14,21 +14,23 @@ import {
   ArrowContainer,
   ArrowLeft,
   ArrowRight,
-  TitleContainer
+  TitleContainer,
+  Link
 } from './StyledProjects'
 
 class Portfolio {
-  constructor(imagePortrait, imageWide, title, subtitle) {
+  constructor(imagePortrait, imageWide, title, subtitle, url) {
     this.imagePortrait = imagePortrait
     this.imageWide = imageWide
     this.title = title
     this.subtitle = subtitle
+    this.url = url
   }
 }
 
-const texadelphia = new Portfolio(TexadelphiaPort, TexadelphiaWide, 'Texadelphia', 'Website')
-const menuBoard = new Portfolio(MenuBoardPort, MenuBoardWide, 'Menu', 'Digital Menu')
-const trekmate = new Portfolio(TrekMatePort, TrekMateWide, 'Trekmate.io', 'Travel App')
+const texadelphia = new Portfolio(TexadelphiaPort, TexadelphiaWide, 'Texadelphia', 'Website', 'https://www.texadelphia.com')
+const menuBoard = new Portfolio(MenuBoardPort, MenuBoardWide, 'Menu', 'Digital Menu', '#')
+const trekmate = new Portfolio(TrekMatePort, TrekMateWide, 'Trekmate.io', 'Travel App', 'http://trekmate.io')
 
 // image array for slide show
 const projectArray = [texadelphia, menuBoard, trekmate]
@@ -67,8 +69,9 @@ class Projects extends Component {
             </ArrowRight>
           </ArrowContainer>
           <TitleContainer>
-            <h1>{projectArray[this.state.n].title}</h1>
+            <Link href={projectArray[this.state.n].url} target="_blank"><h1>{projectArray[this.state.n].title}</h1></Link>
             <h2>{projectArray[this.state.n].subtitle}</h2>
+            {console.log(this.props)}
           </TitleContainer>
 
         </SlideShow>
