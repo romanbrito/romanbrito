@@ -29,7 +29,7 @@ class Portfolio {
 }
 
 const texadelphia = new Portfolio(TexadelphiaPort, TexadelphiaWide, 'Texadelphia', 'Website', 'https://www.texadelphia.com')
-const menuBoard = new Portfolio(MenuBoardPort, MenuBoardWide, 'Menu', 'Digital Menu', '#')
+const menuBoard = new Portfolio(MenuBoardPort, MenuBoardWide, 'Menu', 'Digital Menu Boards', '')
 const trekmate = new Portfolio(TrekMatePort, TrekMateWide, 'Trekmate.io', 'Travel App', 'http://trekmate.io')
 
 // image array for slide show
@@ -69,9 +69,12 @@ class Projects extends Component {
             </ArrowRight>
           </ArrowContainer>
           <TitleContainer>
-            <Link href={projectArray[this.state.n].url} target="_blank"><h1>{projectArray[this.state.n].title}</h1></Link>
+            {projectArray[this.state.n].title !== 'Menu' ?
+              <Link href={projectArray[this.state.n].url} target="_blank"><h1>{projectArray[this.state.n].title}</h1></Link>:
+              <h1>{projectArray[this.state.n].title}</h1>
+            }
+
             <h2>{projectArray[this.state.n].subtitle}</h2>
-            {console.log(this.props)}
           </TitleContainer>
 
         </SlideShow>
