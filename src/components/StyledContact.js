@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Aside = styled.aside.attrs({
-  className: "black flex flex-column justify-center h-100 w-100 center"
+  className: "black flex flex-column justify-center h-100 w-100 center mb4 mb0-ns pa1 pa0-ns"
 })`
   max-width: 500px;
 `

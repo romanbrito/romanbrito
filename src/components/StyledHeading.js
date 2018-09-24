@@ -31,5 +31,5 @@ export const ModalContent = styled.article.attrs({
 })``
 
 export const CloseModalBtn = styled.button.attrs({
-  className: "pointer bg-white absolute right-0 ma5 b--solid b--black"
+  className: "pointer bg-white absolute right-0 ma1 ma5-ns b--solid b--black"
 })``
