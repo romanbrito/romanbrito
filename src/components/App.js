@@ -22,7 +22,7 @@ class App extends Component {
   render() {
     return (
       <Main>
-        <Heading/>
+        <Heading showModal={this.showModal}/>
         {this.state.showArticle ?
           <div>
             <CloseButton
@@ -56,6 +56,12 @@ class App extends Component {
       })
       MAIN.setAttribute("style", "grid-template-rows: 3fr 2fr")
     }
+  }
+
+  // Show resume Modal
+  showModal = () => {
+    const MODAL = document.querySelector('.modal')
+    MODAL.classList.toggle('dn')
   }
 
   // Controlled component functions: onChangeInput and newState

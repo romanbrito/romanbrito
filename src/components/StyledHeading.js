@@ -19,24 +19,9 @@ export const Social = styled.h2.attrs({
 })``
 
 export const Link = styled.a.attrs({
-  className: "white"
+  className: "white pointer"
 })``
 
-// export const Header = styled.header.attrs({
-//   className: "vh-100 flex justify-between flex-column"
-// })``
-//
-// export const MainTitle = styled.div.attrs({
-//   className: "white"
-// })``
-//
-// export const Nav = styled.nav.attrs({
-//   className: "grid f1 h-100 w-100"
-// })`
-//   display: grid;
-//   grid-template-columns: 1fr 1fr;
-// `
-//
-// export const Article = styled.article.attrs({
-//   className: "ba bg-black-10"
-// })``
+export const Modal = styled.figure.attrs({
+  className: "modal dn"
+})``
