@@ -13,10 +13,12 @@ const About = () =>
       </Figure>
       <Main>
         <Title>Roman Brito | Full Stack Developer</Title>
-        <Content><p>My interest in computers began at at age 8 when I got my first PC and continued in High School when
-          I won a couple of coding competitions. I have a BA in Economics and a Masters in Finance from ITESM/EGADE I
-          see potential in developing applications for a wide range of areas, from advertising and loyalty programs to
-          big data analysis and logistics.</p>
+        <Content>
+          <p>
+            My interest in programming started in elementary school when I got my first PC and continued in high school
+            when I competed in coding competitions.  I have a BA in Economics and a Masters in Finance and successfully
+            completed the Full Stack Developer Boot Camp at the University of Texas.
+          </p>
           <Skills><IoLogoHtml5/> <FaReact/> <IoLogoNodejs/> <FaLinux/> <IoLogoCss3/> <IoLogoWordpress/></Skills>
         </Content>
       </Main>
