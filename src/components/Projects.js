@@ -30,7 +30,7 @@ class Portfolio {
 
 const texadelphia = new Portfolio(TexadelphiaPort, TexadelphiaWide, 'Texadelphia', 'Website', 'https://www.texadelphia.com')
 const menuBoard = new Portfolio(MenuBoardPort, MenuBoardWide, 'Menu', 'Digital Menu Boards', '')
-const trekmate = new Portfolio(TrekMatePort, TrekMateWide, 'Trekmate.io', 'Travel App', 'http://trekmate.io')
+const trekmate = new Portfolio(TrekMatePort, TrekMateWide, 'trekmate.io', 'Travel App', 'http://trekmate.io')
 
 // image array for slide show
 const projectArray = [texadelphia, menuBoard, trekmate]
