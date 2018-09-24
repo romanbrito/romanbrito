@@ -1,6 +1,11 @@
 import React from 'react'
 import {IoLogoLinkedin, IoLogoGithub, IoIosDocument} from 'react-icons/io'
-import {Header, MainTitle, SubTitle, Social, Link, Modal} from './StyledHeading'
+import {Header, MainTitle, SubTitle, Social, Link, Modal, ModalContent, CloseModalBtn} from './StyledHeading'
+
+const pdfStyle = {
+  width: '100%',
+  height: '100vh'
+}
 
 const Heading = (props) =>
   <Header>
@@ -16,7 +21,21 @@ const Heading = (props) =>
       ><IoIosDocument/></Link>
     </Social>
     <Modal>
-      This is the modal
+      <ModalContent>
+        <CloseModalBtn
+          onClick={() => props.closeModal()}
+        >
+          CLOSE
+        </CloseModalBtn>
+        <object
+          data={'pdf/ResumeRBew.pdf'}
+          type="application/pdf"
+          style={pdfStyle}
+        >
+          Your browser does not support objects
+        </object>
+
+      </ModalContent>
     </Modal>
 
   </Header>

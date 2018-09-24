@@ -22,7 +22,7 @@ class App extends Component {
   render() {
     return (
       <Main>
-        <Heading showModal={this.showModal}/>
+        <Heading showModal={this.showModal}closeModal={this.closeModal}/>
         {this.state.showArticle ?
           <div>
             <CloseButton
@@ -61,7 +61,14 @@ class App extends Component {
   // Show resume Modal
   showModal = () => {
     const MODAL = document.querySelector('.modal')
-    MODAL.classList.toggle('dn')
+    MODAL.classList.remove('dn')
+    MODAL.classList.add('flex', 'flex-column', 'justify-center')
+  }
+
+  closeModal = () => {
+    const MODAL = document.querySelector('.modal')
+    MODAL.classList.add('dn')
+    MODAL.classList.remove('flex', 'flex-column', 'justify-center')
   }
 
   // Controlled component functions: onChangeInput and newState

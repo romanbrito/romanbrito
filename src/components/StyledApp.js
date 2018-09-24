@@ -8,7 +8,7 @@ export const Main = styled.main.attrs({
 `
 
 export const CloseButton = styled.button.attrs({
-  className: "pointer bg-transparent absolute right-0 ma3 b--solid b--black"
+  className: "pointer bg-white absolute right-0 ma3 b--solid b--black"
 })``
 
 export const Footer = styled.footer.attrs({
