@@ -26,8 +26,6 @@ export const Modal = styled.figure.attrs({
   className: "modal dn ma0 aspect-ratio--object bg-black-70"
 })``
 
-// "modal ma0 absolute absolute--fill bg-black-70 w-100 h-100 dn"
-
 export const ModalContent = styled.article.attrs({
   className: "tc center w-100 h-100"
 })``

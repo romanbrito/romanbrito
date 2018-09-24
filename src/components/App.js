@@ -63,6 +63,11 @@ class App extends Component {
     const MODAL = document.querySelector('.modal')
     MODAL.classList.remove('dn')
     MODAL.classList.add('flex', 'flex-column', 'justify-center')
+
+    // Verify if browser supports objects if not jpeg
+    const PDF_OBJECT = document.querySelector('.pdfObject')
+
+    console.log(PDF_OBJECT)
   }
 
   closeModal = () => {

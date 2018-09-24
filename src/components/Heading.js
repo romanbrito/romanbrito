@@ -1,10 +1,12 @@
 import React from 'react'
 import {IoLogoLinkedin, IoLogoGithub, IoIosDocument} from 'react-icons/io'
 import {Header, MainTitle, SubTitle, Social, Link, Modal, ModalContent, CloseModalBtn} from './StyledHeading'
+import Resume1 from '../images/ResumeRBew_Page_1.jpg'
+import Resume2 from '../images/ResumeRBew_Page_2.jpg'
 
 const pdfStyle = {
   width: '100%',
-  height: '100vh'
+  height: '95vh'
 }
 
 const Heading = (props) =>
@@ -22,18 +24,29 @@ const Heading = (props) =>
     </Social>
     <Modal>
       <ModalContent>
+        
         <CloseModalBtn
           onClick={() => props.closeModal()}
         >
           CLOSE
         </CloseModalBtn>
         <object
+          className="pdfObject dn db-ns"
           data={'pdf/ResumeRBew.pdf'}
           type="application/pdf"
           style={pdfStyle}
         >
           Your browser does not support objects
         </object>
+
+        <img
+          className="dn-ns"
+          src={Resume1}
+          alt="CV page 1"/>
+        <img
+          className="dn-ns"
+          src={Resume2}
+          alt="CV page 2"/>
 
       </ModalContent>
     </Modal>
