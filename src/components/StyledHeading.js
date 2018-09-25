@@ -15,7 +15,7 @@ export const SubTitle = styled.h2.attrs({
 })``
 
 export const Social = styled.h2.attrs({
-  className: "f1"
+  className: "f1 flex"
 })``
 
 export const Link = styled.a.attrs({
@@ -33,3 +33,25 @@ export const ModalContent = styled.article.attrs({
 export const CloseModalBtn = styled.button.attrs({
   className: "pointer bg-white absolute right-0 ma1 ma5-ns b--solid b--black"
 })``
+
+export const ResumeIcon = styled.div.attrs({
+  className: "pointer"
+})`
+  width: 48px;
+  display: grid;
+`
+
+export const ResumeText = styled.div.attrs({
+  className: "black flex flex-column justify-center items center"
+})`
+  font-size: 37%;
+  grid-column: 1;
+  grid-row: 1;
+`
+
+export const Icon = styled.div.attrs({
+  className: ""
+})`
+  grid-column: 1;
+  grid-row: 1;
+`

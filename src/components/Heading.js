@@ -1,6 +1,18 @@
 import React from 'react'
 import {IoLogoLinkedin, IoLogoGithub, IoIosDocument} from 'react-icons/io'
-import {Header, MainTitle, SubTitle, Social, Link, Modal, ModalContent, CloseModalBtn} from './StyledHeading'
+import {
+  Header,
+  MainTitle,
+  SubTitle,
+  Social,
+  Link,
+  Modal,
+  ModalContent,
+  CloseModalBtn,
+  ResumeIcon,
+  ResumeText,
+  Icon
+} from './StyledHeading'
 import Resume1 from '../images/ResumeRBew_Page_1.jpg'
 import Resume2 from '../images/ResumeRBew_Page_2.jpg'
 
@@ -18,13 +30,20 @@ const Heading = (props) =>
     <Social>
       <Link href="https://www.linkedin.com/in/roman-brito-chabrand/" target="_blank"><IoLogoLinkedin/></Link>
       <Link href="https://github.com/romanbrito/" target="_blank"><IoLogoGithub/></Link>
-      <Link
+      <ResumeIcon
         onClick={() => props.showModal()}
-      ><IoIosDocument/></Link>
+      >
+        <Icon>
+          <IoIosDocument/>
+        </Icon>
+        <ResumeText>
+          CV
+        </ResumeText>
+      </ResumeIcon>
     </Social>
     <Modal>
       <ModalContent>
-        
+
         <CloseModalBtn
           onClick={() => props.closeModal()}
         >
