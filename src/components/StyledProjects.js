@@ -29,7 +29,7 @@ export const ImageSmall = styled.img.attrs({
 })``
 
 export const ArrowContainer = styled.div.attrs({
-  className: "flex items-center justify-between"
+  className: "flex items-center justify-between z-1"
 })`
   grid-column: 1;
   grid-row: 1;
