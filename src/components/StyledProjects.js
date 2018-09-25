@@ -59,7 +59,7 @@ export const TitleContainer = styled.div.attrs({
 `
 
 export const Link = styled.a.attrs({
-  className: "link white"
+  className: "link white z-1"
 })`
   :focus {
     outline: none;
