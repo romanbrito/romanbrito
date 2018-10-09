@@ -13,8 +13,7 @@ import {
   ResumeText,
   Icon
 } from './StyledHeading'
-import Resume1 from '../images/ResumeRBew_Page_1.jpg'
-import Resume2 from '../images/ResumeRBew_Page_2.jpg'
+import Resume from '../images/ResumeRBew.jpg'
 
 const pdfStyle = {
   width: '100%',
@@ -60,12 +59,8 @@ const Heading = (props) =>
 
         <img
           className="dn-ns"
-          src={Resume1}
+          src={Resume}
           alt="CV page 1"/>
-        <img
-          className="dn-ns"
-          src={Resume2}
-          alt="CV page 2"/>
 
       </ModalContent>
     </Modal>
