@@ -5,6 +5,8 @@ import TrekMatePort from '../images/trekmateioPortrait.jpg'
 import MenuBoardWide from '../images/Menu.jpg'
 import TexadelphiaWide from '../images/texadelphia.jpg'
 import TrekMateWide from '../images/trekmateio.jpg'
+import itunesReactWide from '../images/itunesReact.jpg'
+import itunesReactPort from '../images/itunesReactPortrait.jpg'
 import {
   Aside,
   SlideShow,
@@ -31,9 +33,10 @@ class Portfolio {
 const texadelphia = new Portfolio(TexadelphiaPort, TexadelphiaWide, 'Texadelphia', 'Website', 'https://www.texadelphia.com')
 const menuBoard = new Portfolio(MenuBoardPort, MenuBoardWide, 'Menu', 'Digital Menu Boards', '')
 const trekmate = new Portfolio(TrekMatePort, TrekMateWide, 'trekmate.io', 'Travel App', 'http://trekmate.io')
+const itunesReact = new Portfolio(itunesReactPort, itunesReactWide, 'itunes ReactJS', '' , 'https://whispering-oasis-63624.herokuapp.com/')
 
 // image array for slide show
-const projectArray = [texadelphia, menuBoard, trekmate]
+const projectArray = [texadelphia, menuBoard, trekmate, itunesReact]
 
 // slide show
 class Projects extends Component {
