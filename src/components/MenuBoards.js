@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components'
+import MenuBoard from '../json/MenuBoard.json'
 
 const Menu = styled.div`
     
     background: linear-gradient(to right, #1584b1, #100142);
+    margin-right: -20px;
     
       * {
       box-sizing: border-box;
@@ -29,12 +31,16 @@ const Menu = styled.div`
     .albums {
       max-width: 1200px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      grid-gap: 20px;
+      //display: grid;
+      //grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      //grid-gap: 20px;
+      display: flex;
+      flex-wrap: wrap;
     }
 
     .album {
+      flex: 1 0 300px;
+      margin-right: 20px;
       display: grid;
       grid-template-areas: "image"
                             "content";
@@ -141,98 +147,29 @@ const MenuBoards = () => {
       <div className="overlay">
         <div className="overlay-inner">
           <button className="close">× Close</button>
-          <img/>
+          <img alt="menu board"/>
         </div>
       </div>
       <div className="albums">
-        <div className="album">
-          <img className="album__artwork"
-               src="https://res.cloudinary.com/spottermart/image/upload/v1549667166/romanBrito/Richardson.jpg"/>
+
+        {MenuBoard.Menus.map(menu =>
+          <div className="album" key={menu.imageSrc}>
+            <img className="album__artwork"
+                 src={menu.imageSrc}
+                 alt={menu.imageAlt}
+            />
             <div className="album__details">
-              <h2>Texadelphia Richardson</h2>
-              <p className="album__artist">Vertical Menuboard and Slideshow</p>
+              <h2>{menu.title}</h2>
+              <p className="album__artist">{menu.description}</p>
             </div>
             <div className="item__overlay">
               <button>View -></button>
             </div>
-        </div>
-        <div className="album">
-          <img className="album__artwork"
-               src="https://res.cloudinary.com/spottermart/image/upload/v1549667619/romanBrito/celebrityDallas.jpg"/>
-            <div className="album__details">
-              <h2>Celebrity Cafe, Preston Rd</h2>
-              <p className="album__artist">Horizontal Menuboard</p>
-            </div>
-            <div className="item__overlay">
-              <button>View -></button>
-            </div>
-        </div>
-        <div className="album">
-          <img className="album__artwork"
-               src="https://res.cloudinary.com/spottermart/image/upload/v1549667166/romanBrito/Moonlight.jpg"/>
-            <div className="album__details">
-              <h2>Texadelphia Moonlight</h2>
-              <p className="album__artist">Vertical Menuboard and Slideshow</p>
-            </div>
-            <div className="item__overlay">
-              <button>View -></button>
-            </div>
-        </div>
-        <div className="album">
-          <img className="album__artwork"
-               src="https://res.cloudinary.com/spottermart/image/upload/v1549667166/romanBrito/McAllen.jpg"/>
-            <div className="album__details">
-              <h2>Texadelphia McAllen</h2>
-              <p className="album__artist">Horizontal Menuboard and Promo Screen</p>
-            </div>
-            <div className="item__overlay">
-              <button>View -></button>
-            </div>
-        </div>
-        <div className="album">
-          <img className="album__artwork"
-               src="https://res.cloudinary.com/spottermart/image/upload/v1549667166/romanBrito/CelebrityArts.jpg"/>
-            <div className="album__details">
-              <h2>Celebrity Cafe, Arts District</h2>
-              <p className="album__artist">Horizontal Menuboard</p>
-            </div>
-            <div className="item__overlay">
-              <button>View -></button>
-            </div>
-        </div>
-        <div className="album">
-          <img className="album__artwork"
-               src="https://res.cloudinary.com/spottermart/image/upload/v1549667166/romanBrito/McAllen2.jpg"/>
-            <div className="album__details">
-              <h2>Texadelphia McAllen</h2>
-              <p className="album__artist">Horizontal Menuboard and Promo Screen</p>
-            </div>
-            <div className="item__overlay">
-              <button>View -></button>
-            </div>
-        </div>
-        <div className="album">
-          <img className="album__artwork"
-               src="https://res.cloudinary.com/spottermart/image/upload/v1549667166/romanBrito/GreatHills.jpg"/>
-            <div className="album__details">
-              <h2>Texadelphia Great Hills</h2>
-              <p className="album__artist">Vertical Menuboard</p>
-            </div>
-            <div className="item__overlay">
-              <button>View -></button>
-            </div>
-        </div>
-        <div className="album">
-          <img className="album__artwork"
-               src="https://res.cloudinary.com/spottermart/image/upload/v1549667166/romanBrito/McAllen3.jpg"/>
-            <div className="album__details">
-              <h2>Texadelphia McAllen</h2>
-              <p className="album__artist">Horizontal Menuboard and Promo Screen</p>
-            </div>
-            <div className="item__overlay">
-              <button>View -></button>
-            </div>
-        </div>
+          </div>
+        )}
+
+
+
       </div>
     </Menu>
   );

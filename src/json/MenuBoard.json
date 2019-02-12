@@ -1,0 +1,52 @@
+{
+  "Menus": [
+    {
+      "imageSrc": "https://res.cloudinary.com/spottermart/image/upload/v1549667166/romanBrito/Richardson.jpg",
+      "imageAlt": "Texadelphia Menu Board",
+      "title": "Texadelphia Richardson",
+      "description": "Vertical Menuboard and Slideshow"
+    },
+    {
+      "imageSrc": "https://res.cloudinary.com/spottermart/image/upload/v1549667619/romanBrito/celebrityDallas.jpg",
+      "imageAlt": "Celebrity Cafe, Preston Rd",
+      "title": "Celebrity Cafe, Preston Rd",
+      "description": "Horizontal Menuboard"
+    },
+    {
+      "imageSrc": "https://res.cloudinary.com/spottermart/image/upload/v1549667166/romanBrito/Moonlight.jpg",
+      "imageAlt": "Texadelphia Moonlight",
+      "title": "Texadelphia Moonlight",
+      "description": "Vertical Menuboard and Slideshow"
+    },
+    {
+      "imageSrc": "https://res.cloudinary.com/spottermart/image/upload/v1549667166/romanBrito/McAllen.jpg",
+      "imageAlt": "Texadelphia McAllen",
+      "title": "Texadelphia McAllen",
+      "description": "Horizontal Menuboard and Promo Screen"
+    },
+    {
+      "imageSrc": "https://res.cloudinary.com/spottermart/image/upload/v1549667166/romanBrito/CelebrityArts.jpg",
+      "imageAlt": "Celebrity Cafe, Arts District",
+      "title": "Celebrity Cafe, Arts District",
+      "description": "Horizontal Menuboard"
+    },
+    {
+      "imageSrc": "https://res.cloudinary.com/spottermart/image/upload/v1549667166/romanBrito/McAllen2.jpg",
+      "imageAlt": "Texadelphia McAllen",
+      "title": "Texadelphia McAllen",
+      "description": "Horizontal Menuboard and Promo Screen"
+    },
+    {
+      "imageSrc": "https://res.cloudinary.com/spottermart/image/upload/v1549667166/romanBrito/GreatHills.jpg",
+      "imageAlt": "Texadelphia Great Hills",
+      "title": "Texadelphia Great Hills",
+      "description": "Vertical Menuboard"
+    },
+    {
+      "imageSrc": "https://res.cloudinary.com/spottermart/image/upload/v1549667166/romanBrito/McAllen3.jpg",
+      "imageAlt": "Texadelphia McAllen",
+      "title": "Texadelphia McAllen",
+      "description": "Horizontal Menuboard and Promo Screen"
+    }
+  ]
+}
