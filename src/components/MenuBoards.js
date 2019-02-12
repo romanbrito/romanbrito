@@ -146,7 +146,11 @@ const MenuBoards = () => {
       </header>
       <div className="overlay">
         <div className="overlay-inner">
-          <button className="close">× Close</button>
+          <button
+            className="close"
+            onClick={e => close()}
+          >× Close
+          </button>
           <img alt="menu board"/>
         </div>
       </div>
@@ -163,16 +167,38 @@ const MenuBoards = () => {
               <p className="album__artist">{menu.description}</p>
             </div>
             <div className="item__overlay">
-              <button>View -></button>
+              <button
+                onClick={e => handleClick(menu.imageSrc)}
+              >
+                View ->
+              </button>
             </div>
           </div>
         )}
-
-
 
       </div>
     </Menu>
   );
 };
+
+function handleClick(imageSrc) {
+  const overlay = document.querySelector('.overlay');
+  const overlayImage = overlay.querySelector('img');
+  const src = imageSrc;
+  overlayImage.src = src;
+  overlay.classList.add('open');
+
+  // click anywhere to close
+  const clickOutside = document.querySelector('body');
+  clickOutside.addEventListener('click', function (e) {
+    e.target === overlay ? close(): '';
+  })
+
+}
+
+function close() {
+  const overlay = document.querySelector('.overlay');
+  overlay.classList.remove('open');
+}
 
 export default MenuBoards;
