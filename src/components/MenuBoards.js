@@ -193,7 +193,7 @@ function handleClick(imageSrc) {
   clickOutside.addEventListener('click', function (e) {
     e.target === overlay ? close(): '';
   })
-
+  
 }
 
 function close() {
