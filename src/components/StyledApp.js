@@ -5,6 +5,11 @@ export const Main = styled.main.attrs({
 })`
   display: grid;
   grid-template-rows: 3fr 2fr;
+   
+  .articles {
+  display: grid;
+  grid-template-rows: 1fr;
+  }
 `
 
 export const CloseButton = styled.button.attrs({

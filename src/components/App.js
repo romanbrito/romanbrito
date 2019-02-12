@@ -1,9 +1,11 @@
 import React, {Component} from 'react'
+import {Switch, Route} from 'react-router-dom'
 import Heading from './Heading'
 import Navigation from './Navigation'
 import Contact from './Contact'
 import About from './About'
 import Projects from './Projects'
+import MenuBoards from './MenuBoards'
 import {Main, CloseButton} from './StyledApp'
 import {fetchQuery} from "../Environment";
 
@@ -13,7 +15,7 @@ class App extends Component {
   state = {
     showArticle: false,
     component: '',
-    sender:'',
+    sender: '',
     from: '',
     text: '',
     error: null
@@ -22,18 +24,29 @@ class App extends Component {
   render() {
     return (
       <Main>
-        <Heading showModal={this.showModal}closeModal={this.closeModal}/>
-        {this.state.showArticle ?
-          <div>
-            <CloseButton
-              onClick={() => this.closeArticle()}
-            >
-              CLOSE
-            </CloseButton>
-            <ComponentSelector component={this.state.component} onChangeInput={this.onChangeInput} sendMail={this.sendMail} error={this.state.error}/>
-          </div>
-          : null}
-        <Navigation showArticle={this.showArticle}/>
+        <Heading showModal={this.showModal} closeModal={this.closeModal}/>
+
+        <Switch>
+          <Route exact path='/' render={(props) => (
+            <div className="articles">
+              {this.state.showArticle ?
+                <div>
+                  <CloseButton
+                    onClick={() => this.closeArticle()}
+                  >
+                    CLOSE
+                  </CloseButton>
+                  <ComponentSelector component={this.state.component} onChangeInput={this.onChangeInput}
+                                     sendMail={this.sendMail} error={this.state.error}/>
+                </div>
+                : null}
+              <Navigation showArticle={this.showArticle}/>
+            </div>
+
+
+          )}/>
+          <Route exact path='/MenuBoards' component={MenuBoards}/>
+        </Switch>
       </Main>
     )
   }
@@ -44,7 +57,8 @@ class App extends Component {
       showArticle: true,
       component: component
     })
-    MAIN.setAttribute("style", "grid-template-rows: 1fr 3fr 1fr")
+    //MAIN.setAttribute("style", "grid-template-rows: 1fr 3fr 1fr")
+    MAIN.setAttribute("style", "grid-template-rows: 1fr 4fr")
   }
 
   closeArticle = () => {
@@ -54,6 +68,7 @@ class App extends Component {
         showArticle: false,
         component: ''
       })
+      //MAIN.setAttribute("style", "grid-template-rows: 3fr 2fr")
       MAIN.setAttribute("style", "grid-template-rows: 3fr 2fr")
     }
   }
@@ -116,8 +131,8 @@ class App extends Component {
       const result = await fetchQuery(sendMailMutation, {from, text})
       if (result.data.sendMailgunEmail.success) {
         this.setState({
-          from:'',
-          text:'',
+          from: '',
+          text: '',
           sender: '',
           error: null
         })

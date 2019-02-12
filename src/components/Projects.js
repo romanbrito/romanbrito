@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 import MenuBoardPort from '../images/MenuPortrait.jpg'
 import TexadelphiaPort from '../images/texadelphiaPortrait.jpg'
 import TrekMatePort from '../images/trekmateioPortrait.jpg'
@@ -17,7 +18,7 @@ import {
   ArrowLeft,
   ArrowRight,
   TitleContainer,
-  Link
+  A
 } from './StyledProjects'
 
 class Portfolio {
@@ -31,7 +32,7 @@ class Portfolio {
 }
 
 const texadelphia = new Portfolio(TexadelphiaPort, TexadelphiaWide, 'Texadelphia', 'Website', 'https://www.texadelphia.com')
-const menuBoard = new Portfolio(MenuBoardPort, MenuBoardWide, 'Menu', 'Digital Menu Boards', '')
+const menuBoard = new Portfolio(MenuBoardPort, MenuBoardWide, 'Menu', 'Digital Menu Boards', '/MenuBoards.html')
 const trekmate = new Portfolio(TrekMatePort, TrekMateWide, 'trekmate.io', 'Travel App', 'http://trekmate.io')
 const itunesReact = new Portfolio(itunesReactPort, itunesReactWide, 'itunes ReactJS', '' , 'https://whispering-oasis-63624.herokuapp.com/')
 
@@ -72,9 +73,10 @@ class Projects extends Component {
             </ArrowRight>
           </ArrowContainer>
           <TitleContainer>
-            {projectArray[this.state.n].title !== 'Menu' ?
-              <Link href={projectArray[this.state.n].url} target="_blank"><h1>{projectArray[this.state.n].title}</h1></Link>:
-              <h1>{projectArray[this.state.n].title}</h1>
+            {
+              projectArray[this.state.n].title !== 'Menu' ?
+                <A href={projectArray[this.state.n].url} target="_blank"><h1>{projectArray[this.state.n].title}</h1></A>:
+                <Link to='MenuBoards'><h1>{projectArray[this.state.n].title}</h1></Link>
             }
 
             <h2>{projectArray[this.state.n].subtitle}</h2>

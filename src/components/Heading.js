@@ -1,11 +1,12 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import {IoLogoLinkedin, IoLogoGithub, IoIosDocument} from 'react-icons/io'
 import {
   Header,
   MainTitle,
   SubTitle,
   Social,
-  Link,
+  A,
   Modal,
   ModalContent,
   CloseModalBtn,
@@ -23,12 +24,12 @@ const pdfStyle = {
 const Heading = (props) =>
   <Header>
     <div>
-      <MainTitle>Roman Brito</MainTitle>
+      <Link to='/'><MainTitle>Roman Brito</MainTitle></Link>
       <SubTitle>Full Stack Developer</SubTitle>
     </div>
     <Social>
-      <Link href="https://www.linkedin.com/in/roman-brito-chabrand/" target="_blank"><IoLogoLinkedin/></Link>
-      <Link href="https://github.com/romanbrito/" target="_blank"><IoLogoGithub/></Link>
+      <A href="https://www.linkedin.com/in/roman-brito-chabrand/" target="_blank"><IoLogoLinkedin/></A>
+      <A href="https://github.com/romanbrito/" target="_blank"><IoLogoGithub/></A>
       <ResumeIcon
         onClick={() => props.showModal()}
       >

@@ -56,12 +56,19 @@ export const TitleContainer = styled.div.attrs({
 })`
   grid-column: 1;
   grid-row: 1;
+  
+  a {
+  z-index: 1;
+  text-decoration: none;
+  color: white;
+  }
 `
 
-export const Link = styled.a.attrs({
+export const A = styled.a.attrs({
   className: "link white z-1"
 })`
   :focus {
     outline: none;
   }
+  text-decoration: none;
 `

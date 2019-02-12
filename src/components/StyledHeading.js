@@ -4,6 +4,11 @@ export const Header = styled.header.attrs({
   className: "bg-center flex h-100 flex-column justify-center items-center"
 })`
   background-image: url("https://res.cloudinary.com/spottermart/image/upload/c_scale,w_1920/v1536360287/BGromanbrito_e7rvch.jpg");
+  
+  a {
+    text-decoration: none;
+    color: white;
+  }
 `
 
 export const MainTitle = styled.h1.attrs({
@@ -18,7 +23,7 @@ export const Social = styled.h2.attrs({
   className: "f1 flex"
 })``
 
-export const Link = styled.a.attrs({
+export const A = styled.a.attrs({
   className: "white pointer"
 })``
 
