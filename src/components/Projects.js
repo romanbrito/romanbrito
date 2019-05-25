@@ -37,7 +37,7 @@ const trekmate = new Portfolio(TrekMatePort, TrekMateWide, 'trekmate.io', 'Trave
 const itunesReact = new Portfolio(itunesReactPort, itunesReactWide, 'itunes ReactJS', '' , 'https://whispering-oasis-63624.herokuapp.com/')
 
 // image array for slide show
-const projectArray = [texadelphia, menuBoard, trekmate, itunesReact]
+const projectArray = [texadelphia, menuBoard, itunesReact]
 
 // slide show
 class Projects extends Component {

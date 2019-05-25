@@ -4,6 +4,7 @@ export const Header = styled.header.attrs({
   className: "bg-center flex h-100 flex-column justify-center items-center"
 })`
   background-image: url("https://res.cloudinary.com/spottermart/image/upload/c_scale,w_1920/v1536360287/BGromanbrito_e7rvch.jpg");
+  background-size: cover;
   
   a {
     text-decoration: none;
